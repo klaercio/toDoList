@@ -1,0 +1,31 @@
+.formulario {
+    width: 46rem;
+    margin: 0 auto;
+}
+
+.formulario form {
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    margin-top: -1.6875rem;
+}
+
+.formulario button {
+    display: flex;
+    color: var(--white);
+    padding: 1rem;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--blue);
+}
+
+.inputTask {
+    padding: 1rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    background: var(--gray-500);
+    width: 39.875rem;
+    height: 3.375rem;
+}

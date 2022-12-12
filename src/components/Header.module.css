@@ -1,0 +1,23 @@
+.cabecalho {
+    display: flex;
+    height: 12.5rem;
+    background: var(--gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.to {
+    color: var(--blue);
+    font-size: 40px;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.do {
+    color: var(--purple-dark);
+    font-size: 40px;
+    font-weight: 900;
+    display: inline-block;
+}
