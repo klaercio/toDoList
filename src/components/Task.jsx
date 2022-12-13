@@ -3,12 +3,12 @@ import UnChecked from '../assets/unchecked.svg';
 import { Trash } from 'phosphor-react';
 import styles from './Task.module.css';
 
-export default function Task({id, content, checked, handleSwitchChecked}) {
+export default function Task({id, content, checked, handleSwitchChecked, handleDeleteTask}) {
     return <>
-        <div>
-            <img src={checked? Checked: UnChecked}/>
+        <div className={styles.task}>
+            <button className={styles.onChecked} onClick={() => handleSwitchChecked(id, checked)}><img src={checked? Checked: UnChecked}/></button>
             <span>{content}</span>
-            <Trash size={24} className={styles.iconTrash}/>
+            <Trash size={24} className={styles.iconTrash} onClick={() => handleDeleteTask(id, checked)}/>
         </div>
     </>
 }

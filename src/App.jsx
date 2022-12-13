@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import { PlusCircle } from 'phosphor-react';
 import empty from './assets/empty.svg';
 import Task from './components/Task';
+import { v4 } from 'uuid';
 
 function App() {
 
@@ -14,12 +15,11 @@ function App() {
   function handleNewTask() {
     event.preventDefault();
     setListTask([...listTask, {
-      id: listTask.length,
+      id: v4(),
       content: task,
       checked: false,
     }
     ]);
-    console.log(listTask)
     setTask('');
   }
 
@@ -28,9 +28,9 @@ function App() {
     setTask(newTask);
   }
 
-  function handleSwitchChecked(id) {
+  function handleSwitchChecked(id, checado) {
 
-    if (listTask[id].checked === true) 
+    if (checado) 
       setConcluidas(atual => atual - 1);
     else 
       setConcluidas(atual => atual + 1);
@@ -49,7 +49,18 @@ function App() {
     })
 
     setListTask(newList);
-    console.log(newList);
+  }
+
+  function handleDeleteTask(id, checked) {
+
+    if(checked) 
+      setConcluidas(atual => atual - 1);
+
+    const newList = listTask.filter(task => (
+        task.id !== id
+    ))
+
+    setListTask(newList);
   }
 
   return (
@@ -70,8 +81,16 @@ function App() {
           {
            listTask.length === 0 ?
                   <><img src={empty}/><span><p>Você ainda não tem tarefas cadastradas</p><p>Crie tarefas e organize seus itens a fazer</p></span></>
-                : 
-                listTask.map(itemTask => (<Task key={itemTask.id} id={itemTask.id} content={itemTask.content} checked={itemTask.checked} handleSwitchChecked={handleSwitchChecked}/>)) 
+           : 
+                listTask.map(itemTask => (<Task 
+                                              key={itemTask.id} 
+                                              id={itemTask.id} 
+                                              content={itemTask.content} 
+                                              checked={itemTask.checked} 
+                                              handleSwitchChecked={handleSwitchChecked}
+                                              handleDeleteTask={handleDeleteTask}
+                                           />
+                                          )) 
           } 
           </div>
       </div>
