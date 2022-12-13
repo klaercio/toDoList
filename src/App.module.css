@@ -1,4 +1,4 @@
-.formulario {
+.formulario, .content {
     width: 46rem;
     margin: 0 auto;
 }
@@ -28,4 +28,65 @@
     background: var(--gray-500);
     width: 39.875rem;
     height: 3.375rem;
+    color: var(--gray-300);
+}
+
+.tarefas {
+    display: flex;
+    padding-top: 5.6875rem;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-400);
+}
+
+.tarefas span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarefas span p{
+    display: inline-block;
+}
+
+.tarefasCriadas {
+    color: var(--blue);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.tarefasConcluidas {
+    color: var(--purple-dark);
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.contador {
+    display: flex;
+    color: var(--gray-100);
+    background-color: var(--gray-400);
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tasksContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    gap: 1rem;
+}
+
+.tasksContent span p {
+    color: var(--gray-300);
+    line-height: 22.4px;
+}
+
+.tasksContent span p:nth-child(1) {
+    font-weight: bold;
 }
