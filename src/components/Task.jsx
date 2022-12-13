@@ -7,7 +7,7 @@ export default function Task({id, content, checked, handleSwitchChecked, handleD
     return <>
         <div className={styles.task}>
             <button className={styles.onChecked} onClick={() => handleSwitchChecked(id, checked)}><img src={checked? Checked: UnChecked}/></button>
-            <span>{content}</span>
+            <span className={checked? styles.checked: ''}>{content}</span>
             <Trash size={24} className={styles.iconTrash} onClick={() => handleDeleteTask(id, checked)}/>
         </div>
     </>

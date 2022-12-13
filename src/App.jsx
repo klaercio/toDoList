@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import styles from './App.module.css';
-import { PlusCircle } from 'phosphor-react';
+import { PlusCircle, TextBolder } from 'phosphor-react';
 import empty from './assets/empty.svg';
 import Task from './components/Task';
 import { v4 } from 'uuid';
